@@ -89,6 +89,17 @@ main{
     border-bottom:2px solid green;
 }
 
+.nav-container .nav-items ul li i{
+    text-decoration: none;
+    color:black;
+    font-size: 1.8rem;
+}
+
+.nav-container .nav-items ul li i:hover{
+    color:green;
+    border-bottom:2px solid green;
+}
+
 /* **********index.html************ */
 
 .hero-container{
@@ -169,6 +180,7 @@ main{
 
 .feature-product-container{
     position:relative;
+    width:100vw;
     top:14vh; 
 }
 
@@ -180,20 +192,27 @@ main{
 
 .feature-product-container .card{
     position:fixed;
-    top:0px;
-    left:100%;
     width:500px;
-    background-color: rgb(195, 191, 191);
-    border-left:1px solid gray;
-    height:100vh;
+    background-color: rgb(233, 231, 231);
+    border:1px solid rgb(39, 39, 39);
+    height:86vh;
+    transition: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 }
 
-.card-active .card{
-    left:calc(100% - 500px);
+.display-cart{
+    top:14vh;
+    right:0px;
+    z-index: 2;
 }
 
-.card-active .feature-product-container{
-    transform: translateX(-200px);
+.hide-cart{
+    top:14vh;
+    right:-500px;
+    z-index:2;
+    
 }
 
 .feature-product-container .card h1{
@@ -214,6 +233,13 @@ main{
     grid-template-columns: repeat(2,1fr);
 }
 
+.feature-product-container .card .listCard{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:62vh;
+    
+}
+
 .feature-product-container .card .checkOut div{
     background-color: rgb(6, 148, 37);
     color: white;
@@ -229,6 +255,71 @@ main{
 .card .checkOut div:nth-child(2){
     background-color: black;
     color:white;
+}
+
+.card .listCard .cart-item{
+    width:98%;
+    margin:auto;
+    height:70px;
+    padding:5px 20px;
+    border:1px solid rgb(121, 120, 120);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    gap:40px;
+    background-color: rgb(254, 254, 254);
+} 
+
+.card .listCard .cart-item .cart-item-title{
+    width:fit-content;
+    font-size: 0.7rem;
+}
+
+.card .listCard .cart-item .cart-img-container{
+    height:100%;
+    width:120px;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .listCard .cart-item img{
+    height:100%;
+    width:100px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.card .listCard .cart-item .cart-item-price{
+    font-size: 1rem;
+    font-weight: bold;
+    width:150px;
+    text-align: center;
+}
+
+.card .listCard .cart-item .quantity{
+    width:40px;
+    height:30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border:1px solid rgb(121, 120, 120);
+    padding-left:14px;
+}
+
+.card .listCard .cart-item i{
+    width:30px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.5rem;
+}
+
+.delete-icon{
+    color:rgb(182, 10, 10);
 }
 
 .feature-product-container .pro{
@@ -253,7 +344,7 @@ main{
 
 .feature-product-container 
 .feature-product:hover{
-    box-shadow: 5px 5px 70px lightgray;
+    box-shadow: 5px 5px 50px rgb(154, 153, 153);
 }
 
 .feature-product-container .feature-product img{
@@ -750,70 +841,4 @@ main{
 
 
 /* ************product-detail.html***************** */
-
-.product-detail-container{
-    width:100vw;
-    padding:60px;
-    position:relative;
-    top:14vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-detail-container .feature-product {
-    width:70vw;
-    margin:auto;
-    padding:40px ;
-    display:flex;
-    gap:40px;
-    border:1px solid lightgray;
-    border-radius:10px;
-    position:relative;
-}
-
-.product-detail-container .feature-product img{
-    height:250px;
-}
-
-.product-detail-container .feature-product .product-description{
-    display:flex;
-    flex-direction: column;
-    gap:15px;
-}
-
-.product-detail-container .feature-product .product-description .product-brand{
-    font-size: 1.5rem;
-}
-
-.product-detail-container .feature-product .product-description .product-name{
-    font-size: 1.5rem;
-}
-
-.product-detail-container .feature-product .product-description .product-price{
-    font-size: 1.4rem;
-}
-
-.product-detail-container .feature-product .product-description .des{
-    font-size: 1.2rem;
-}
-
-.product-detail-container .feature-product .add-to-cart{
-    width:100px;
-    height:30px;
-    border-radius:5px;
-    position:absolute;
-    left:527px;
-    bottom:10px;
-    
-}
-
-.product-detail-container .feature-product .add-to-cart:hover{
-    background-color: lightgreen;
-}
-
-
-
-
-
 
